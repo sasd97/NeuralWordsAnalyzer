@@ -6,5 +6,9 @@ package sample.sources;
 
 public class Input {
 
-    public Link[] outgoingLikns;
+    public Link[] outgoingLinks;
+
+    public Input(Link[] links) {
+        outgoingLinks = links;
+    }
 }

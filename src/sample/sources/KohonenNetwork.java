@@ -9,12 +9,24 @@ public class KohonenNetwork {
     private  Input[] _inputs;
     private  Neuron[] _neurons;
 
+    public KohonenNetwork() {
+        Neuron a = new Neuron("A");
+        Neuron b = new Neuron("B");
+        Neuron c = new Neuron("C");
+        Neuron d = new Neuron("D");
+
+        _neurons = new Neuron[4];
+        _inputs = new Input[1600];
+
+        for (Input i:_inputs) i = new Input();
+    }
+
     public int Handle(int[] input)
     {
         for (int i = 0; i < _inputs.length; i++)
         {
             Input inputNeuron = _inputs[i];
-            for (Link outgoingLink: inputNeuron.outgoingLikns)
+            for (Link outgoingLink: inputNeuron.outgoingLinks)
             {
                 outgoingLink.neuron.power += outgoingLink.weight * input[i];
             }
