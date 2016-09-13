@@ -33,4 +33,14 @@ public class KohonenNetwork {
         }
         return maxIndex;
     }
+
+    public void Study(int[] input, int correctAnswer)
+    {
+        Neuron neuron = _neurons[correctAnswer];
+        for (int i = 0; i < neuron.incomingLinks.length; i++)
+        {
+            Link incomingLink = neuron.incomingLinks[i];
+            incomingLink.weight = incomingLink.weight + 0.5 * (input[i] - incomingLink.weight);
+        }
+    }
 }
