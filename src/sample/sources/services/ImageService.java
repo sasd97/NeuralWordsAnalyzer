@@ -14,7 +14,6 @@ import static sample.sources.constants.ImageHandlerConstants.ALFA_SHIFT;
 import static sample.sources.constants.ImageHandlerConstants.GREEN_SHIFT;
 import static sample.sources.constants.ImageHandlerConstants.RED_SHIFT;
 
-
 /**
  * Created by Alexadner Dadukin on 13.09.2016.
  */

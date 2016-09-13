@@ -3,6 +3,7 @@ package sample.sources.constants;
 /**
  * Created by Alexadner Dadukin on 13.09.2016.
  */
+
 public interface ImageHandlerConstants {
     int PIXEL_MASK = 0xff;
     int ALFA_OFFSET = -16777216;
