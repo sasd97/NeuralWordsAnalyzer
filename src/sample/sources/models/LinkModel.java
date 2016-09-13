@@ -1,4 +1,4 @@
-package sample.sources;
+package sample.sources.models;
 
 import com.sun.istack.internal.NotNull;
 
@@ -6,12 +6,12 @@ import com.sun.istack.internal.NotNull;
  * Created by alexander on 13.09.16.
  */
 
-public class Link {
+public class LinkModel {
 
-    public Neuron neuron;
+    public NeuronModel neuron;
     public double weight;
 
-    public Link(@NotNull Neuron neuron) {
+    public LinkModel(@NotNull NeuronModel neuron) {
         this.neuron = neuron;
         this.weight = 0;
     }

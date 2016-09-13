@@ -3,7 +3,7 @@ package sample.ui.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.stage.FileChooser;
-import sample.sources.Neuron;
+import sample.sources.models.NeuronModel;
 import sample.sources.services.ImageService;
 
 import java.io.File;
@@ -50,7 +50,7 @@ public class Controller implements ImageService.OnImageHandleListener {
     @FXML
     protected void tryObtain(ActionEvent event) {
         int position = network().Handle(vector);
-        Neuron neuron = network().getLucky(position);
+        NeuronModel neuron = network().getLucky(position);
         System.out.println(neuron.getTitle());
     }
 

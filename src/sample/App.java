@@ -5,11 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.sources.KohonenNetwork;
+import sample.sources.Network;
 
 public class App extends Application {
 
-    private static KohonenNetwork network = new KohonenNetwork();
+    private static Network network = new Network();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -23,7 +23,7 @@ public class App extends Application {
         launch(args);
     }
 
-    public static KohonenNetwork network() {
+    public static Network network() {
         return network;
     }
 }
