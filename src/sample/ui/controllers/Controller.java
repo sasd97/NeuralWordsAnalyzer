@@ -19,6 +19,7 @@ public class Controller implements ImageService.OnImageHandleListener {
     protected void handle(ActionEvent event) throws IOException {
         FileChooser fileChooser = new FileChooser();
         File selected = fileChooser.showOpenDialog(null);
+        if (selected == null) return;
 
         System.out.println(selected.getAbsolutePath());
         ImageService service = ImageService.getService(this);
