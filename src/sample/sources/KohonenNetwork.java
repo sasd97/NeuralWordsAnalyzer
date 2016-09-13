@@ -10,15 +10,29 @@ public class KohonenNetwork {
     private  Neuron[] _neurons;
 
     public KohonenNetwork() {
+        _inputs = new Input[1600];
+
         Neuron a = new Neuron("A");
         Neuron b = new Neuron("B");
         Neuron c = new Neuron("C");
         Neuron d = new Neuron("D");
 
-        _neurons = new Neuron[4];
-        _inputs = new Input[1600];
+        for (int i = 0; i < 1600; i++) {
+            Link toA = new Link(a);
+            Link toB = new Link(b);
+            Link toC = new Link(c);
+            Link toD = new Link(d);
 
-        for (Input i:_inputs) i = new Input();
+            Link[] links = new Link[]{ toA, toB, toC, toD };
+            _inputs[i] = new Input(links);
+
+            a.addLink(toA);
+            b.addLink(toB);
+            c.addLink(toC);
+            d.addLink(toD);
+        }
+
+        _neurons = new Neuron[] { a, b, c, d };
     }
 
     public int Handle(int[] input)
@@ -49,10 +63,14 @@ public class KohonenNetwork {
     public void Study(int[] input, int correctAnswer)
     {
         Neuron neuron = _neurons[correctAnswer];
-        for (int i = 0; i < neuron.incomingLinks.length; i++)
+        for (int i = 0; i < neuron.incomingLinks.size(); i++)
         {
-            Link incomingLink = neuron.incomingLinks[i];
+            Link incomingLink = neuron.get(i);
             incomingLink.weight = incomingLink.weight + 0.5 * (input[i] - incomingLink.weight);
         }
+    }
+
+    public Neuron getLucky(int position) {
+        return _neurons[position];
     }
 }
